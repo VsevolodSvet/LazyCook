@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/orange_gradient"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kochmarevsevolod.lazycook.Search_Page"
+    tools:showIn="@layout/app_bar_srch"
+    android:clickable="false">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:showDividers="beginning|middle|end"
+        android:id="@+id/tableLayout">
+
+        <TableRow android:showDividers="beginning|none|middle|end"
+            android:minHeight="40dp"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/row1">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Поиск по ингредиентам"
+                android:id="@+id/tv"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#FF000000"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center" />
+
+        </TableRow>
+        <TableRow android:showDividers="beginning|middle|end"
+            android:minHeight="40dp"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/row2">
+
+            <ListView
+                android:id="@+id/list_chosen"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="#aaffffff"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="30"
+                android:clickable="true"
+                android:choiceMode="singleChoice" />
+
+            <TableLayout android:layout_height="fill_parent">
+
+                <TableRow android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Поиск!"
+                        android:id="@+id/search"
+                        android:layout_weight="0"
+                        android:layout_gravity="top" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Соль"
+                        android:id="@+id/salt"
+                        android:layout_gravity="top" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Плита"
+                        android:id="@+id/stove"
+                        android:layout_marginTop="0dp"
+                        android:layout_gravity="top" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/ingredientFilter"
+                android:background="#ffffff"
+                android:enabled="true"
+                android:editable="true"
+                android:allowUndo="true"
+                android:textColor="#000000"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/search_button"
+                android:layout_toStartOf="@+id/search_button"
+                android:layout_alignTop="@+id/search_button"
+                android:layout_weight="30"
+                android:maxLines="1"
+                android:maxLength="40"
+                android:elegantTextHeight="true"
+                android:padding="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:inputType="text"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                style="@style/Widget.Design.TextInputLayout"
+                android:autoText="true"
+                android:singleLine="true"
+                android:textStyle="normal"
+                android:hint="Введите название блюда" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/search_ingredient"
+                android:layout_alignTop="@+id/linearLayout"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:ellipsize="start"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:padding="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                style="@style/Widget.Design.FloatingActionButton"
+                android:background="@android:drawable/ic_menu_search"
+                android:enabled="true"
+                android:focusable="true"
+                android:clickable="true"
+                android:allowUndo="false"
+                android:onClick="onClick"
+                />
+        </TableRow>
+
+        <TableRow android:showDividers="beginning|middle|end"
+            android:minHeight="40dp"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/row3">
+
+            <ListView
+                android:id="@+id/list_ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="#aaffffff"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="30"
+                android:clickable="true"
+                android:choiceMode="singleChoice" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</RelativeLayout>
